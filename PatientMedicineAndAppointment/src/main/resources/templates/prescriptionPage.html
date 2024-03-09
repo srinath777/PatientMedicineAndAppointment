@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body style="background-color:lightgreen;">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top "style="font-family: 'Poppins', sans-serif;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-user mr-1" aria-hidden="true"></i>Book Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-medkit mr-1" aria-hidden="true"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="container.fluid pt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Prescription</div>
+                <div class="card-body">
+                    <form th:action="@{/savePrescription}" method="POST">
+                        <div class="form-group">
+                            <label for="patientName">Patient Name</label>
+                            <input type="text" class="form-control" id="patientName" >
+                        </div>
+                        <div class="form-group">
+                            <label for="issue">Issue</label>
+                            <input type="text" class="form-control" id="issue" >
+                        </div>
+                        <div class="form-group">
+                            <label for="medicine">Medicine</label>
+                            <input type="text" class="form-control" id="medicine" >
+                        </div>
+                        <div class="form-group">
+                            <label for="injectionNeeded">Injection Needed</label>
+                            <input type="text" class="form-control" id="injectionNeeded" >
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Comments</label>
+                            <textarea class="form-control" id="comments" rows="3" ></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Prescription</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <p></p>
+</footer>
+
+</body>
+</html>
